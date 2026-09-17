@@ -1,0 +1,64 @@
+{
+  "name": "@open-panel/profile-engine",
+  "version": "0.1.0",
+  "description": "Profile/page/button CRUD, zod validation, SQLite persistence (via Node's built-in node:sqlite) and schema-version migrations for OpenPanel.",
+  "type": "module",
+  "license": "MIT",
+  "author": "OpenPanel contributors",
+  "homepage": "https://github.com/open-panel/package-profile-engine#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-panel/package-profile-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/open-panel/package-profile-engine/issues"
+  },
+  "keywords": [
+    "openpanel",
+    "macropad",
+    "stream-deck",
+    "profiles",
+    "sqlite"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@open-panel/shared": "^0.1.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
